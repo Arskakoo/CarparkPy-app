@@ -1,0 +1,10 @@
+*node_modules
+.vite
+__pycache__
+.vscode
+parking_log.json
+yolov8x.pt
+.env
+*.jpg
+*.png
+*.jpeg
