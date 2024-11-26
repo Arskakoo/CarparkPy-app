@@ -1,4 +1,4 @@
-![Logo](https://github.com/Arskakoo/CarparkPy/blob/main/img/ReadmeLogo.png)
+![Logo](https://github.com/Arskakoo/CarparkPy-app/blob/main/img/ReadmeLogo.png)
 
 # CarparkPy
 
