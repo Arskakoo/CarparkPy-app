@@ -1,0 +1,26 @@
+{
+  "ParkingLot": [
+    {
+      "id": 1,
+      "name": "Esimerkkiparkki",
+      "location": "Esimerkkiosoite, 12",
+      "timestamp": "timestamp",
+      "detection_coords": [
+        { "x": 887, "y": 693, "occupied": false, "spot_id": 0 },
+        { "x": 1028, "y": 700, "occupied": false, "spot_id": 1 },
+        { "x": 1174, "y": 704, "occupied": false, "spot_id": 2 },
+        { "x": 1317, "y": 722, "occupied": false, "spot_id": 3 },
+        { "x": 749, "y": 693, "occupied": false, "spot_id": 4 },
+        { "x": 623, "y": 682, "occupied": false, "spot_id": 5 },
+        { "x": 495, "y": 674, "occupied": false, "spot_id": 6 },
+        { "x": 374, "y": 679, "occupied": false, "spot_id": 7 },
+        { "x": 244, "y": 684, "occupied": false, "spot_id": 8 },
+        { "x": 126, "y": 663, "occupied": false, "spot_id": 9 },
+        { "x": 31, "y": 653, "occupied": false, "spot_id": 10 },
+        { "x": 204, "y": 539, "occupied": false, "spot_id": 11 },
+        { "x": 316, "y": 550, "occupied": false, "spot_id": 12 },
+        { "x": 504, "y": 560, "occupied": false, "spot_id": 13 }
+      ]
+    }
+  ]
+}
