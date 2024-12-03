@@ -102,7 +102,7 @@ const ParkCharts = () => {
     <ChartContainer config={chartConfig} className="w-5/12">
       <div>
         <CardHeader>
-          <CardTitle>Vieraspaikat</CardTitle>
+          <CardTitle>Tilasto</CardTitle>
           <CardDescription>Viimeiset 24h</CardDescription>
           {maxOccupied && (
             <div>

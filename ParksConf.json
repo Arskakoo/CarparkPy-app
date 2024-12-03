@@ -1,17 +1,16 @@
 {
-    "ParkingLot": [
-      {
-        "id": 1,
-        "name": "Example Parking Lot",
-        "location": "Example Address, 12",
-        "detection_coords": [
-          {"x": 100, "y": 200, "occupied": false, "spot_id": 1},
-          {"x": 200, "y": 200, "occupied": false, "spot_id": 2},
-          {"x": 300, "y": 200, "occupied": false, "spot_id": 3},
-          {"x": 100, "y": 300, "occupied": false, "spot_id": 4},
-          {"x": 200, "y": 300, "occupied": false, "spot_id": 5}
-        ]
-      }
-    ]
-  }
-  
+  "ParkingLot": [
+    {
+      "id": 1,
+      "name": "Example Park",
+      "location": "Example Address, 12",
+      "detection_coords": [
+        { "x": 100, "y": 200, "occupied": false, "spot_id": 1 },
+        { "x": 200, "y": 200, "occupied": false, "spot_id": 2 },
+        { "x": 300, "y": 200, "occupied": false, "spot_id": 3 },
+        { "x": 100, "y": 300, "occupied": false, "spot_id": 4 },
+        { "x": 200, "y": 300, "occupied": false, "spot_id": 5 }
+      ]
+    }
+  ]
+}

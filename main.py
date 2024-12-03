@@ -5,6 +5,7 @@ import threading
 import cv2
 from ultralytics import YOLO
 from dotenv import load_dotenv
+
 # YOLOv8x tunnistaa ajoneuvot parhaiten
 model = YOLO('yolov8x.pt')
 
