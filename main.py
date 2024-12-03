@@ -4,7 +4,7 @@ import time
 import threading
 import cv2
 from ultralytics import YOLO
-
+from dotenv import load_dotenv
 # YOLOv8x tunnistaa ajoneuvot parhaiten
 model = YOLO('yolov8x.pt')
 
@@ -151,18 +151,22 @@ def detect_and_draw_vehicles(image_path, output_path='output.jpg', confidence_th
 
 # Kameran hallinta
 def capture_and_detect():
-    cap = cv2.VideoCapture(0)  # 0 = default camera, 1 = external camera
-
-    if not cap.isOpened():
-        print("Error: Could not open camera.")
-        return
 
     try:
         while True:
+            load_dotenv()
+            ip_camera_url = os.getenv("IP_CAMERA_URL") 
+            cap = cv2.VideoCapture(ip_camera_url)
+
+            if not cap.isOpened():
+                print("Error: Could not open camera.")
+                return
+
             ret, frame = cap.read()
             if not ret:
-                print("Error: Could not read frame.")
-                break
+                print("Error: Could not read frame. Retrying...")
+                time.sleep(2)  # Try again after a short delay
+                continue
 
             filename = "photo.jpg"
             cv2.imwrite(filename, frame)
