@@ -48,19 +48,42 @@ stats_thread.start()
 # Parking spots selection
 def select_parking_spots(image_path):
     selected_coords = []
-    
+    display_size = (800, 450)  # Small display size for the window
+    original_size = (1600, 900)  # Original size of the image
+
+    # Calculate scaling factors
+    scale_x = original_size[0] / display_size[0]
+    scale_y = original_size[1] / display_size[1]
+
     def mouse_callback(event, x, y, flags, param):
+        nonlocal resized_img
         if event == cv2.EVENT_LBUTTONDOWN:
-            selected_coords.append((x, y))
-            print(f"Selected spot: ({x}, {y})")
+            # Scale coordinates back to the original resolution
+            original_x = int(x * scale_x)
+            original_y = int(y * scale_y)
+            selected_coords.append((original_x, original_y))
+            print(f"Selected spot (original resolution): ({original_x}, {original_y})")
+
+            # Draw a green-yellow rectangle at the selected spot
+            cv2.rectangle(
+                resized_img,
+                (x - 10, y - 10),  # Top-left corner (adjusted for rectangle size)
+                (x + 10, y + 10),  # Bottom-right corner
+                (0, 255, 255),  # Green-yellow color in BGR format
+                2  # Line thickness
+            )
+            cv2.imshow("Select Parking Spots", resized_img)
 
     img = cv2.imread(image_path)
-    cv2.imshow("Select Parking Spots", img)
+    resized_img = cv2.resize(img, display_size)  # Resize for display
+    cv2.imshow("Select Parking Spots", resized_img)
     cv2.setMouseCallback("Select Parking Spots", mouse_callback)
-    cv2.waitKey(0)  # Wait for a key press after selecting spots
+    cv2.waitKey(0)
     cv2.destroyAllWindows()
 
     return selected_coords
+
+
 
 def save_parking_spots_to_json(coords):
     parking_lot_data = {"ParkingLot": [{"detection_coords": []}]}
@@ -185,6 +208,28 @@ def detect_and_draw_vehicles(image_path, output_path='output.jpg', confidence_th
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
     cv2.imwrite(output_path, resized_img)
 
+
+def take_photo():
+    # kuvan ottamminen ja tallentaminen conffausta varten
+    load_dotenv()
+    ip_camera_url = os.getenv("IP_CAMERA_URL")
+    cap = cv2.VideoCapture(ip_camera_url)
+
+    if not cap.isOpened():
+        print("Error: Could not open camera.")
+        return
+
+    ret, frame = cap.read()
+    if not ret:
+        print("Error: Could not read frame.")
+        return
+
+    resized_frame = cv2.resize(frame, (1600, 900))  # Resize to 1600x900
+    filename = "photo.jpg"
+    cv2.imwrite(filename, resized_frame)
+    print("Photo saved as 1600x900.")
+
+
 # Kameran hallinta
 def capture_and_detect():
     try:
@@ -226,8 +271,7 @@ def menu():
     choice = input("Choose an option (1 or 2): ")
 
     if choice == '1':
-        image_path = input("Enter the path of the image to select parking spots: ")
-        coords = select_parking_spots(image_path)
+        coords = select_parking_spots("photo.jpg")
         if coords:
             save_parking_spots_to_json(coords)
     elif choice == '2':
