@@ -1,17 +1,62 @@
 {
     "ParkingLot": [
-      {
-        "id": 1,
-        "name": "Example Parking Lot",
-        "location": "Example Address, 12",
-        "detection_coords": [
-          {"x": 100, "y": 200, "occupied": false, "spot_id": 1},
-          {"x": 200, "y": 200, "occupied": false, "spot_id": 2},
-          {"x": 300, "y": 200, "occupied": false, "spot_id": 3},
-          {"x": 100, "y": 300, "occupied": false, "spot_id": 4},
-          {"x": 200, "y": 300, "occupied": false, "spot_id": 5}
-        ]
-      }
+        {
+            "detection_coords": [
+                {
+                    "x": 331,
+                    "y": 315,
+                    "occupied": false,
+                    "spot_id": "spot_1"
+                },
+                {
+                    "x": 433,
+                    "y": 317,
+                    "occupied": false,
+                    "spot_id": "spot_2"
+                },
+                {
+                    "x": 503,
+                    "y": 301,
+                    "occupied": false,
+                    "spot_id": "spot_3"
+                },
+                {
+                    "x": 557,
+                    "y": 291,
+                    "occupied": false,
+                    "spot_id": "spot_4"
+                },
+                {
+                    "x": 263,
+                    "y": 318,
+                    "occupied": false,
+                    "spot_id": "spot_5"
+                },
+                {
+                    "x": 211,
+                    "y": 324,
+                    "occupied": false,
+                    "spot_id": "spot_6"
+                },
+                {
+                    "x": 161,
+                    "y": 326,
+                    "occupied": false,
+                    "spot_id": "spot_7"
+                },
+                {
+                    "x": 115,
+                    "y": 331,
+                    "occupied": false,
+                    "spot_id": "spot_8"
+                },
+                {
+                    "x": 77,
+                    "y": 326,
+                    "occupied": false,
+                    "spot_id": "spot_9"
+                }
+            ]
+        }
     ]
-  }
-  
+}
