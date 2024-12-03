@@ -86,7 +86,16 @@ def select_parking_spots(image_path):
 
 
 def save_parking_spots_to_json(coords):
-    parking_lot_data = {"ParkingLot": [{"detection_coords": []}]}
+    parking_lot_data = {
+        "ParkingLot": [
+            {
+                "id": 1,
+                "name": "Example Park",  # Add a meaningful name
+                "location": "Example Address, 12",  # Add a meaningful location
+                "detection_coords": []
+            }
+        ]
+    }
     for x, y in coords:
         parking_lot_data["ParkingLot"][0]["detection_coords"].append({
             "x": x,
@@ -98,6 +107,7 @@ def save_parking_spots_to_json(coords):
     with open("ParksConf.json", "w") as file:
         json.dump(parking_lot_data, file, indent=4)
     print("Saved parking spots to ParksConf.json.")
+
 
 # Load detection coordinates
 def load_detection_coords():
