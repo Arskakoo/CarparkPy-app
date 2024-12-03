@@ -48,8 +48,8 @@ stats_thread.start()
 # Parking spots selection
 def select_parking_spots(image_path):
     selected_coords = []
-    display_size = (800, 450)  # Small display size for the window
-    original_size = (1600, 900)  # Original size of the image
+    display_size = (800, 450)
+    original_size = (1600, 900)
 
     # Calculate scaling factors
     scale_x = original_size[0] / display_size[0]
@@ -58,24 +58,22 @@ def select_parking_spots(image_path):
     def mouse_callback(event, x, y, flags, param):
         nonlocal resized_img
         if event == cv2.EVENT_LBUTTONDOWN:
-            # Scale coordinates back to the original resolution
             original_x = int(x * scale_x)
             original_y = int(y * scale_y)
             selected_coords.append((original_x, original_y))
             print(f"Selected spot (original resolution): ({original_x}, {original_y})")
 
-            # Draw a green-yellow rectangle at the selected spot
             cv2.rectangle(
                 resized_img,
-                (x - 10, y - 10),  # Top-left corner (adjusted for rectangle size)
-                (x + 10, y + 10),  # Bottom-right corner
-                (0, 255, 255),  # Green-yellow color in BGR format
-                2  # Line thickness
+                (x - 10, y - 10),
+                (x + 10, y + 10),
+                (0, 255, 255),
+                2
             )
             cv2.imshow("Select Parking Spots", resized_img)
 
     img = cv2.imread(image_path)
-    resized_img = cv2.resize(img, display_size)  # Resize for display
+    resized_img = cv2.resize(img, display_size)
     cv2.imshow("Select Parking Spots", resized_img)
     cv2.setMouseCallback("Select Parking Spots", mouse_callback)
     cv2.waitKey(0)
@@ -90,8 +88,8 @@ def save_parking_spots_to_json(coords):
         "ParkingLot": [
             {
                 "id": 1,
-                "name": "Example Park",  # Add a meaningful name
-                "location": "Example Address, 12",  # Add a meaningful location
+                "name": "Example Park",
+                "location": "Example Address, 12",
                 "detection_coords": []
             }
         ]
@@ -100,7 +98,7 @@ def save_parking_spots_to_json(coords):
         parking_lot_data["ParkingLot"][0]["detection_coords"].append({
             "x": x,
             "y": y,
-            "occupied": False,  # Initially, the spots are unoccupied
+            "occupied": False,
             "spot_id": f"spot_{len(parking_lot_data['ParkingLot'][0]['detection_coords']) + 1}"
         })
 
@@ -109,7 +107,6 @@ def save_parking_spots_to_json(coords):
     print("Saved parking spots to ParksConf.json.")
 
 
-# Load detection coordinates
 def load_detection_coords():
     parking_lot_file = "ParksConf.json"
     if not os.path.exists(parking_lot_file):
@@ -124,8 +121,7 @@ def load_detection_coords():
         ]
         return detection_coords
 
-# Tallentaa nykyhetken tiedot parking_log.json ja luosen
-# Tallentaa nykyhetken tiedot parking_log.json ja luosen
+# Tallentaa nykyhetken tiedot parking_log.json ja luo sen
 def log_to_json(timestamp, occupied_count, unoccupied_count):
     detection_coords = load_detection_coords()
 
@@ -137,8 +133,7 @@ def log_to_json(timestamp, occupied_count, unoccupied_count):
         parking_lot_data = json.load(file)
 
     parking_lot = parking_lot_data["ParkingLot"][0]
-    # Use a default value if 'id' is missing
-    parking_lot_id = parking_lot.get("id", "unknown_id")  # Default value: "unknown_id"
+    parking_lot_id = parking_lot.get("id", "unknown_id") 
     data = {
         "ParkingLot": [
             {
@@ -167,7 +162,7 @@ def is_overlap(detected_box, coord):
     return (xmin_detected < xmax_coord_box and xmax_detected > xmin_coord and
             ymin_detected < ymax_coord_box and ymax_detected > ymin_coord)
 
-# Piirtää kuvan missä oletus ruudut näkyuy vihreällä tai punaisella
+# Piirtää kuvan missä oletus ruudut näkyyy vihreällä tai punaisella
 def detect_and_draw_vehicles(image_path, output_path='output.jpg', confidence_threshold=0.1):
     img = cv2.imread(image_path)
     resized_img = cv2.resize(img, (1600, 900))
@@ -190,15 +185,15 @@ def detect_and_draw_vehicles(image_path, output_path='output.jpg', confidence_th
                 ))
 
     occupied_count = 0
-    detection_coords = load_detection_coords()  # Load parking spots from JSON
+    detection_coords = load_detection_coords()  # Lataa ruudut jsonista
 
-    for (xmin, ymin, _, _) in detection_coords:  # Draw boxes on the image
-        box_color = (0, 255, 0)  # Green if spot is free
+    for (xmin, ymin, _, _) in detection_coords:
+        box_color = (0, 255, 0)
         occupied = any(is_overlap((xmin_det, ymin_det, xmax_det, ymax_det), (xmin, ymin))
                        for xmin_det, ymin_det, xmax_det, ymax_det, _, _ in detections)
 
         if occupied:
-            box_color = (0, 0, 255)  # Red if spot is occupied
+            box_color = (0, 0, 255)
             occupied_count += 1
 
         cv2.rectangle(resized_img, (xmin, ymin), (xmin + 50, ymin + 50), box_color, 2)
@@ -234,7 +229,7 @@ def take_photo():
         print("Error: Could not read frame.")
         return
 
-    resized_frame = cv2.resize(frame, (1600, 900))  # Resize to 1600x900
+    resized_frame = cv2.resize(frame, (1600, 900)) 
     filename = "photo.jpg"
     cv2.imwrite(filename, resized_frame)
     print("Photo saved as 1600x900.")
@@ -245,7 +240,7 @@ def capture_and_detect():
     try:
         while True:
             load_dotenv()
-            ip_camera_url = os.getenv("IP_CAMERA_URL") 
+            ip_camera_url = os.getenv("IP_CAMERA_URL")
             cap = cv2.VideoCapture(ip_camera_url)
 
             if not cap.isOpened():
@@ -290,7 +285,6 @@ def menu():
         print("Invalid choice, exiting.")
         return
 
-    # Proceed to detection after selection
     capture_and_detect()
 
 if __name__ == "__main__":
