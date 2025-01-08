@@ -6,16 +6,190 @@
             "location": "Example Address, 12",
             "detection_coords": [
                 {
-                    "x": 530,
-                    "y": 830,
+                    "x": 136,
+                    "y": 236,
                     "occupied": false,
                     "spot_id": "spot_1"
                 },
                 {
-                    "x": 836,
-                    "y": 794,
+                    "x": 458,
+                    "y": 270,
                     "occupied": false,
                     "spot_id": "spot_2"
+                },
+                {
+                    "x": 806,
+                    "y": 272,
+                    "occupied": false,
+                    "spot_id": "spot_3"
+                },
+                {
+                    "x": 1076,
+                    "y": 314,
+                    "occupied": false,
+                    "spot_id": "spot_4"
+                },
+                {
+                    "x": 956,
+                    "y": 594,
+                    "occupied": false,
+                    "spot_id": "spot_5"
+                },
+                {
+                    "x": 552,
+                    "y": 652,
+                    "occupied": false,
+                    "spot_id": "spot_6"
+                },
+                {
+                    "x": 54,
+                    "y": 510,
+                    "occupied": false,
+                    "spot_id": "spot_7"
+                },
+                {
+                    "x": 390,
+                    "y": 450,
+                    "occupied": false,
+                    "spot_id": "spot_8"
+                },
+                {
+                    "x": 592,
+                    "y": 392,
+                    "occupied": false,
+                    "spot_id": "spot_9"
+                },
+                {
+                    "x": 842,
+                    "y": 478,
+                    "occupied": false,
+                    "spot_id": "spot_10"
+                },
+                {
+                    "x": 500,
+                    "y": 406,
+                    "occupied": false,
+                    "spot_id": "spot_11"
+                },
+                {
+                    "x": 600,
+                    "y": 62,
+                    "occupied": false,
+                    "spot_id": "spot_12"
+                },
+                {
+                    "x": 914,
+                    "y": 72,
+                    "occupied": false,
+                    "spot_id": "spot_13"
+                },
+                {
+                    "x": 1108,
+                    "y": 86,
+                    "occupied": false,
+                    "spot_id": "spot_14"
+                },
+                {
+                    "x": 356,
+                    "y": 144,
+                    "occupied": false,
+                    "spot_id": "spot_15"
+                },
+                {
+                    "x": 484,
+                    "y": 248,
+                    "occupied": false,
+                    "spot_id": "spot_16"
+                },
+                {
+                    "x": 884,
+                    "y": 210,
+                    "occupied": false,
+                    "spot_id": "spot_17"
+                },
+                {
+                    "x": 758,
+                    "y": 122,
+                    "occupied": false,
+                    "spot_id": "spot_18"
+                },
+                {
+                    "x": 956,
+                    "y": 164,
+                    "occupied": false,
+                    "spot_id": "spot_19"
+                },
+                {
+                    "x": 1016,
+                    "y": 294,
+                    "occupied": false,
+                    "spot_id": "spot_20"
+                },
+                {
+                    "x": 1374,
+                    "y": 238,
+                    "occupied": false,
+                    "spot_id": "spot_21"
+                },
+                {
+                    "x": 1346,
+                    "y": 594,
+                    "occupied": false,
+                    "spot_id": "spot_22"
+                },
+                {
+                    "x": 1138,
+                    "y": 820,
+                    "occupied": false,
+                    "spot_id": "spot_23"
+                },
+                {
+                    "x": 1172,
+                    "y": 854,
+                    "occupied": false,
+                    "spot_id": "spot_24"
+                },
+                {
+                    "x": 1448,
+                    "y": 802,
+                    "occupied": false,
+                    "spot_id": "spot_25"
+                },
+                {
+                    "x": 1442,
+                    "y": 558,
+                    "occupied": false,
+                    "spot_id": "spot_26"
+                },
+                {
+                    "x": 1504,
+                    "y": 318,
+                    "occupied": false,
+                    "spot_id": "spot_27"
+                },
+                {
+                    "x": 1452,
+                    "y": 108,
+                    "occupied": false,
+                    "spot_id": "spot_28"
+                },
+                {
+                    "x": 1092,
+                    "y": 98,
+                    "occupied": false,
+                    "spot_id": "spot_29"
+                },
+                {
+                    "x": 1244,
+                    "y": 402,
+                    "occupied": false,
+                    "spot_id": "spot_30"
+                },
+                {
+                    "x": 1132,
+                    "y": 522,
+                    "occupied": false,
+                    "spot_id": "spot_31"
                 }
             ]
         }
