@@ -218,7 +218,7 @@ def take_photo():
     # kuvan ottamminen ja tallentaminen conffausta varten
     load_dotenv()
     ip_camera_url = os.getenv("IP_CAMERA_URL")
-    cap = cv2.VideoCapture(ip_camera_url)
+    cap = cv2.VideoCapture(0)
 
     if not cap.isOpened():
         print("Error: Could not open camera.")
@@ -241,7 +241,7 @@ def capture_and_detect():
         while True:
             load_dotenv()
             ip_camera_url = os.getenv("IP_CAMERA_URL")
-            cap = cv2.VideoCapture(ip_camera_url)
+            cap = cv2.VideoCapture(0)
 
             if not cap.isOpened():
                 print("Error: Could not open camera.")
