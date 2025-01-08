@@ -1,10 +1,18 @@
 [
     {
-        "timestamp": "2024-12-03 14:00:25",
+        "timestamp": "2025-01-07 10:34:09",
         "name": "Example Park",
         "location": "Example Address, 12",
         "id": 1,
-        "occupied_spots": 2,
-        "unoccupied_spots": 3
+        "occupied_spots": 0,
+        "unoccupied_spots": 38
+    },
+    {
+        "timestamp": "2025-01-07 10:44:18",
+        "name": "Example Park",
+        "location": "Example Address, 12",
+        "id": 1,
+        "occupied_spots": 0,
+        "unoccupied_spots": 38
     }
 ]
