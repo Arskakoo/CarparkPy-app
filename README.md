@@ -8,6 +8,8 @@ Kloonaa repo ja lataa sinne seuraavat asiat:
 
 ##### Python
 
+Python tarvitsee seuraavat asiat:
+
 ```
 pip install opencv-python
 pip install matplotlib
@@ -16,6 +18,8 @@ pip install flask-cors
 ```
 
 ##### Frontend
+
+React frontend tarvitsee seuraavan:
 
 ```
 npm i
@@ -35,10 +39,12 @@ python app.py
 ```
 
 ```
-cd Flask
-cd frontend
+cd Frontend
 npm run dev
 ```
+
+> [!NOTE]  
+> Muista käynnistää jokainen tiedosto erikseen.
 
 ## Tekijät
 
