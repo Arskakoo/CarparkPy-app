@@ -44,7 +44,7 @@ npm run dev
 ```
 
 > [!NOTE]  
-> Muista käynnistää jokainen tiedosto erikseen.
+> Muista käynnistää jokainen tiedosto erikseen omissa konsoleissaan.
 
 ## Tekijät
 
