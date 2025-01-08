@@ -1,0 +1,10 @@
+[
+    {
+        "timestamp": "2025-01-08 13:23:13",
+        "name": "Example Park",
+        "location": "Example Address, 12",
+        "id": 1,
+        "occupied_spots": 0,
+        "unoccupied_spots": 31
+    }
+]

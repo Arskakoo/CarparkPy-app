@@ -33,7 +33,9 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
               <span className="material-symbols-rounded text-black/80 bg-white/0">
                 local_parking
               </span>
-              <span className="my-auto text-sm bg-white/0">Parkit</span>
+              <span className="my-auto text-sm bg-white/0 font-bold">
+                Parkit
+              </span>
             </div>
           </div>
           {/* ----------- */}
@@ -48,7 +50,9 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
               <span className="material-symbols-rounded text-black/80 bg-white/0">
                 visibility
               </span>
-              <span className="my-auto text-sm bg-white/0">Tarkista</span>
+              <span className="my-auto text-sm bg-white/0 font-bold">
+                Tarkista
+              </span>
             </div>
           </div>
           {/*  */}
@@ -63,7 +67,9 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
               <span className="material-symbols-rounded text-black/80 bg-white/0">
                 equalizer
               </span>
-              <span className="my-auto text-sm bg-white/0">Tilastot</span>
+              <span className="my-auto text-sm bg-white/0 font-bold">
+                Tilastot
+              </span>
             </div>
           </div>
           {/* -------- */}
@@ -81,7 +87,7 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
               <span className="material-symbols-rounded text-black/80 bg-white/0">
                 database
               </span>
-              <span className="my-auto text-sm bg-white/0">Tila</span>
+              <span className="my-auto text-sm bg-white/0 font-bold">Tila</span>
             </div>
           </div>
         </div>
