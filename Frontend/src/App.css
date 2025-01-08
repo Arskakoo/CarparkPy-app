@@ -1,0 +1,44 @@
+:root {
+  --size-scaler: 6px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", serif;
+  background-color: whitesmoke;
+  color: black;
+}
+
+html,
+body {
+  min-height: 100vh !important;
+  max-width: 100vw !important;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: calc(var(--size-scaler) * 3) !important;
+  gap: var(--size-scaler) !important;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+header,
+main {
+  padding: calc(var(--size-scaler) * 1) !important;
+}
+
+main {
+  flex: 1 !important; /* This allows the main content to grow and take available space */
+}
+
+footer {
+  margin-top: auto; /* This pushes the footer to the bottom */
+}

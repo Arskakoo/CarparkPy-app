@@ -138,8 +138,8 @@ def log_to_json(timestamp, occupied_count, unoccupied_count):
         "ParkingLot": [
             {
                 "id": parking_lot_id,
-                "name": parking_lot.get("name", "Unnamed Lot"),  # Use a default if 'name' is missing
-                "location": parking_lot.get("location", "Unknown Location"),  # Default location
+                "name": parking_lot.get("name", "Unnamed Lot"),  
+                "location": parking_lot.get("location", "Unknown Location"),
                 "timestamp": timestamp,
                 "occupied_spots": occupied_count,
                 "unoccupied_spots": unoccupied_count,
