@@ -10,8 +10,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Nunito", serif;
-  background-color: whitesmoke;
+  font-family: "Roboto", serif;
+  background-color: #fafbfd;
   color: black;
 }
 
@@ -36,9 +36,9 @@ main {
 }
 
 main {
-  flex: 1 !important; /* This allows the main content to grow and take available space */
+  flex: 1 !important;
 }
 
 footer {
-  margin-top: auto; /* This pushes the footer to the bottom */
+  margin-top: auto;
 }
