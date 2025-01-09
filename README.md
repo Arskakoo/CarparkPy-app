@@ -1,4 +1,4 @@
-![Logo](https://github.com/Arskakoo/CarparkPy-app/blob/main/img/ReadmeLogo.png)
+# CarparkPy
 
 Vapaiden parkkipaikkojen automaattinen tunnistus. Sekä käyttäjä ystävällinen käyttöliittymä.
 
