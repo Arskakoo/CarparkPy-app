@@ -19,15 +19,15 @@ function App() {
 
   return (
     <div>
-      <header className="flex text-md ">
+      <header className="flex text-md mx-3">
         <div>
-          <p className="text-2xl font-bold text-black/80">
+          <p className="text-3xl font-bold text-black/80">
             Carpark<span className="text-blue-500">Py</span>
           </p>
         </div>
       </header>
-      <main className="w-full h-screen flex">
-        <div className="h-full w-1/7 flex  md:flex ml-2">
+      <main className="w-full h-screen flex ">
+        <div className="h-full w-1/7 flex   md:flex ">
           <SideBar activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
         </div>
 

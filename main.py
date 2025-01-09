@@ -40,7 +40,7 @@ def write_stats():
             json.dump(stats_data, stats_file, indent=4)
 
         print("Updated stats.json")
-        time.sleep(600)  # Odottaa 10min ennenkuin tallentaa seuraavan tiedon ja ensimmäisen
+        time.sleep(600)  # Odottaa 10min ennenkuin tallentaa seuraavan tiedon 
 
 stats_thread = threading.Thread(target=write_stats, daemon=True)
 stats_thread.start()

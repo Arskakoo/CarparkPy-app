@@ -36,9 +36,9 @@ main {
 }
 
 main {
-  flex: 1 !important; /* This allows the main content to grow and take available space */
+  flex: 1 !important;
 }
 
 footer {
-  margin-top: auto; /* This pushes the footer to the bottom */
+  margin-top: auto;
 }

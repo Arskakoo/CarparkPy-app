@@ -3,6 +3,8 @@
 __pycache__
 .vscode
 parking_log.json
+ParksConf.json
+stats.json
 yolov8x.pt
 .env
 *.jpg
