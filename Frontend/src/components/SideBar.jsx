@@ -34,19 +34,19 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
 
       {/* Sidebar */}
       <div
-        className={`sidebar mt-5 select-none font-semibold md:block ${
+        className={`sidebar select-none font-semibold md:block ${
           isMenuOpen ? fadeClass : "hidden"
         }`}
       >
-        <div className="w-full pr-5">
+        <div className="w-full mt-2">
           <div className="flex flex-col gap-1">
             <div
               onClick={() => handleClick(0)}
               className={`flex gap-1 transition-all cursor-pointer ${
-                activeIndex === 0 ? "opacity-80" : "opacity-20"
+                activeIndex === 0 ? "opacity-70" : "opacity-20"
               }`}
             >
-              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-2">
+              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-3">
                 <span className="material-symbols-rounded bg-white/0">
                   local_parking
                 </span>
@@ -59,12 +59,12 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
             <div
               onClick={() => handleClick(1)}
               className={`flex gap-1 transition-all cursor-pointer ${
-                activeIndex === 1 ? "opacity-80 " : "opacity-20"
+                activeIndex === 1 ? "opacity-70 " : "opacity-20"
               }`}
             >
-              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-2">
+              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-3">
                 <span className="material-symbols-rounded bg-white/0">
-                  visibility
+                  camera_video
                 </span>
                 <span className="my-auto text-sm bg-white/0 font-bold tracking-wide ">
                   Tarkista
@@ -78,9 +78,9 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
                 activeIndex === 2 ? "opacity-80" : "opacity-20"
               }`}
             >
-              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-2">
+              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-3">
                 <span className="material-symbols-rounded bg-white/0">
-                  equalizer
+                  bar_chart
                 </span>
                 <span className="my-auto text-sm bg-white/0 font-bold tracking-wide ">
                   Tilastot
@@ -88,7 +88,7 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
               </div>
             </div>
 
-            <div className="bg-gray-200 w-full my-5 border-b"></div>
+            <div className="bg-gray-200 w-full my-1 border-b"></div>
 
             <div
               onClick={() => handleClick(7)}
@@ -96,9 +96,9 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
                 activeIndex === 7 ? "opacity-80" : "opacity-20"
               }`}
             >
-              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-2">
+              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-3">
                 <span className="material-symbols-rounded bg-white/0">
-                  database
+                  hard_drive
                 </span>
                 <span className="my-auto text-sm bg-white/0 font-bold tracking-wide ">
                   Tila

@@ -44,14 +44,13 @@ const MainStatus = () => {
           () => (
             <p className="bg-white flex gap-3">
               <p className="bg-white mt-auto">
-                <span className="material-symbols-rounded text-red-500/80 bg-red-500/10 p-1 rounded-md">
+                <span className="material-symbols-rounded text-red-500/80 bg-white/0 p-1 rounded-md">
                   warning
                 </span>
               </p>
               <p className="bg-white font-semibold">
-                {" "}
-                Tieto on vanhentunut kohteessa{" "}
-                <span className="font-bold bg-red-500/10 px-2 py-0.5 rounded-md text-red-400">
+                Tieto on vanhentunut kohteessa <br />
+                <span className="font-bold bg-red-500/10 px-2 py-0.5 rounded-md text-red-400 break-normal">
                   {lot.name},
                 </span>{" "}
                 <span className="font-bold bg-white">Ota yhteys tukeen!</span>
@@ -80,15 +79,21 @@ const MainStatus = () => {
   }, [statusData, notifiedLots, toastIds]);
 
   return (
-    <div className="p-5 select-none">
-      <p className="text-orange-400 font-bold text-xl pb-10 border-b">Tila</p>
+    <div className="p-6 select-none">
+      <div className="border-b flex pb-10">
+        <p className="font-bold text-2xl">Tila</p>
+        <p className="ml-auto text-sm font-bold my-auto opacity-30">
+          Versio 3.0
+        </p>
+      </div>
+
       <Toaster />
       {statusData.map((lot, index) => {
         const lotUpdateTime = new Date(lot.last_update.replace(/ /g, "T"));
         const status = getStatus(lot.last_update);
 
         return (
-          <div key={index} className="border-b p-2 flex w-full font-semibold">
+          <div key={index} className="border-b p-2 flex w-full font-semibold ">
             <div className="flex gap-4 w-fit">
               {status === "recent" ? (
                 <p className="bg-green-400 w-4 h-4 rounded-md m-auto"></p>
