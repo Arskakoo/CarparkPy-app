@@ -33,6 +33,14 @@ Muista käynnistää seuraavat 3 kohtaa:
 python main.py
 ```
 
+Käynnistyksessä kestää hetki sillä se lataa tarvittavia ominaisuuksia
+
+Valitse 1 jolloin saat valita parkkiruudut klikkaamalla kuvaa.
+
+- Tallenna painamalla S
+
+Tämän jälkeen käynnistä uudelleen ja valitse 2 jolloin ruutujen tunnistus alkaa
+
 ```
 cd Flask
 python app.py
@@ -45,6 +53,14 @@ npm run dev
 
 > [!NOTE]  
 > Muista käynnistää jokainen tiedosto erikseen omissa konsoleissaan.
+
+## Parkkipaikan tietojen muokkaaminen
+
+Parkkipaikan tiedoikis tulevat automaattisesti nämä:
+
+"name": "Example Park",<br>"location": "Example Address, 12",
+
+Voit muokata oikeat parkkipaikan tiedot ParksConf.json tiedostosta.
 
 ## Tekijät
 
