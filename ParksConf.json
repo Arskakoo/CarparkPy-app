@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Example Park",
-            "location": "Example Address, 12",
+            "location": "Hepolamminkatu 10",
             "detection_coords": [
                 {
                     "x": 556,
