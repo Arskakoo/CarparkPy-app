@@ -21,13 +21,13 @@ function App() {
     <div>
       <header className="flex text-md ">
         <div>
-          <p className="text-2xl font-bold">
+          <p className="text-2xl font-bold text-black/80">
             Carpark<span className="text-blue-500">Py</span>
           </p>
         </div>
       </header>
       <main className="w-full h-screen flex">
-        <div className="h-full w-1/7 flex hidden md:flex ml-2">
+        <div className="h-full w-1/7 flex  md:flex ml-2">
           <SideBar activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
         </div>
 
