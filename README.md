@@ -6,7 +6,9 @@ Vapaiden parkkipaikkojen automaattinen tunnistus. Sekä käyttäjä ystävällin
 
 Kloonaa repo ja lataa sinne seuraavat asiat:
 
-##### Python
+### Python
+
+Python tarvitsee seuraavat asiat:
 
 ```
 pip install opencv-python
@@ -15,13 +17,15 @@ pip install flask
 pip install flask-cors
 ```
 
-##### Frontend
+### Frontend
+
+React frontend tarvitsee seuraavan:
 
 ```
 npm i
 ```
 
-##### Käynnistys
+### Käynnistys
 
 Muista käynnistää seuraavat 3 kohtaa:
 
@@ -35,10 +39,12 @@ python app.py
 ```
 
 ```
-cd Flask
-cd frontend
+cd Frontend
 npm run dev
 ```
+
+> [!NOTE]  
+> Muista käynnistää jokainen tiedosto erikseen omissa konsoleissaan.
 
 ## Tekijät
 

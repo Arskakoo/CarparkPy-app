@@ -54,7 +54,7 @@ const ParkSelect = () => {
     data.places.find((place) => place.id === parseInt(selectedParkId, 10));
 
   return (
-    <div className="w-full mt-36 flex-grow">
+    <div className="w-full mt-36 flex-grow ">
       <div className="m-auto justify-auto flex text-center h-full lg:w-[20%] md-[0%] sm:w-[40%] flex-col">
         <p className="p-4 font-bold text-2xl">
           Valitse <span className="text-blue-500">parkkipaikka</span>
