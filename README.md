@@ -39,7 +39,7 @@ Valitse 1 jolloin saat valita parkkiruudut klikkaamalla kuvaa.
 
 - Tallenna painamalla S
 
-Tämän jälkeen käynnistä uudelleen ja valitse 2 jolloin ruutujen tunnistus alkaa
+Main käynnistyy itse confauksen jälkeen mikäli confaus on jo tehty aiemmin pitää valita 2 vaihtoehto.
 
 ```
 cd Flask
