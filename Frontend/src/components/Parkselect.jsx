@@ -15,7 +15,7 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 import React, { useEffect, useState } from "react";
-
+import MapComponent from "./MapComponent";
 const ParkSelect = () => {
   const [data, setData] = useState({ places: [] });
   const [selectedParkId, setSelectedParkId] = useState("");
@@ -100,6 +100,7 @@ const ParkSelect = () => {
                   </div>
                 </DialogTitle>
                 <hr className="my-2" />
+                <MapComponent location={selectedPark.location} />
                 <DialogDescription className="flex font-semibold">
                   <div className="flex gap-10 m-auto text-center">
                     <p className="p-1 flex flex-col">

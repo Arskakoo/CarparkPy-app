@@ -26,8 +26,8 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
   };
 
   return (
-    <div>
-      {/* Burger Menu Button for mobile */}
+    // mobile to right
+    <div className="">
       <div className="burger-menu md:hidden" onClick={toggleMenu}>
         <span className="material-symbols-rounded">menu</span>
       </div>
@@ -38,8 +38,8 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
           isMenuOpen ? fadeClass : "hidden"
         }`}
       >
-        <div className="w-full mt-2">
-          <div className="flex flex-col gap-1">
+        <div className="w-screen md:w-full mt-2 transition-all">
+          <div className="flex flex-col md:mt-0 mt-7 gap-5 md:gap-1">
             <div
               onClick={() => handleClick(0)}
               className={`flex gap-1 transition-all cursor-pointer ${
@@ -50,7 +50,7 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
                 <span className="material-symbols-rounded bg-white/0">
                   local_parking
                 </span>
-                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide ">
+                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide" onClick={toggleMenu}>
                   Parkit
                 </span>
               </div>
@@ -66,7 +66,7 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
                 <span className="material-symbols-rounded bg-white/0">
                   camera_video
                 </span>
-                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide ">
+                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide" onClick={toggleMenu}>
                   Tarkista
                 </span>
               </div>
@@ -78,17 +78,17 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
                 activeIndex === 2 ? "opacity-80" : "opacity-20"
               }`}
             >
-              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-3">
+              <div className="w-full pr-24 pl-2 py-1.5 rounded-md md:flex hidden gap-3">
                 <span className="material-symbols-rounded bg-white/0">
                   bar_chart
                 </span>
-                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide ">
+                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide" onClick={toggleMenu}>
                   Tilastot
                 </span>
               </div>
             </div>
 
-            <div className="bg-gray-200 w-full my-1 border-b"></div>
+            <div className="bg-gray-200 w-full hidden md:flex my-1 border-b"></div>
 
             <div
               onClick={() => handleClick(7)}
@@ -96,11 +96,11 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
                 activeIndex === 7 ? "opacity-80" : "opacity-20"
               }`}
             >
-              <div className="w-full pr-24 pl-2 py-1.5 rounded-md flex gap-3">
+              <div className="w-full pr-24 pl-2 py-1.5 rounded-md md:flex gap-3 hidden">
                 <span className="material-symbols-rounded bg-white/0">
                   filter_drama
                 </span>
-                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide ">
+                <span className="my-auto text-sm bg-white/0 font-bold tracking-wide" onClick={toggleMenu}>
                   Tila
                 </span>
               </div>
