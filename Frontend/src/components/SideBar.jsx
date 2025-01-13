@@ -28,7 +28,7 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
   return (
     // mobile to right
     <div className="">
-      <div className="burger-menu md:hidden" onClick={toggleMenu}>
+      <div className="burger-menu md:hidden mt-2" onClick={toggleMenu}>
         <span className="material-symbols-rounded">menu</span>
       </div>
 

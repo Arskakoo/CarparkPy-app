@@ -6,232 +6,814 @@
             "location": "Hepolamminkatu 10",
             "detection_coords": [
                 {
-                    "x": 556,
-                    "y": 618,
+                    "x": 220,
+                    "y": 668,
                     "occupied": false,
                     "spot_id": "spot_1"
                 },
                 {
-                    "x": 646,
-                    "y": 618,
+                    "x": 210,
+                    "y": 542,
                     "occupied": false,
                     "spot_id": "spot_2"
                 },
                 {
-                    "x": 910,
-                    "y": 636,
+                    "x": 240,
+                    "y": 518,
                     "occupied": false,
                     "spot_id": "spot_3"
                 },
                 {
-                    "x": 974,
-                    "y": 718,
+                    "x": 460,
+                    "y": 560,
                     "occupied": false,
                     "spot_id": "spot_4"
                 },
                 {
-                    "x": 946,
-                    "y": 766,
+                    "x": 466,
+                    "y": 580,
                     "occupied": false,
                     "spot_id": "spot_5"
                 },
                 {
-                    "x": 794,
-                    "y": 814,
+                    "x": 458,
+                    "y": 618,
                     "occupied": false,
                     "spot_id": "spot_6"
                 },
                 {
-                    "x": 770,
-                    "y": 814,
+                    "x": 510,
+                    "y": 670,
                     "occupied": false,
                     "spot_id": "spot_7"
                 },
                 {
-                    "x": 688,
-                    "y": 770,
+                    "x": 660,
+                    "y": 734,
                     "occupied": false,
                     "spot_id": "spot_8"
                 },
                 {
-                    "x": 578,
-                    "y": 774,
+                    "x": 720,
+                    "y": 740,
                     "occupied": false,
                     "spot_id": "spot_9"
                 },
                 {
-                    "x": 536,
-                    "y": 764,
+                    "x": 882,
+                    "y": 740,
                     "occupied": false,
                     "spot_id": "spot_10"
                 },
                 {
-                    "x": 494,
-                    "y": 682,
+                    "x": 1062,
+                    "y": 740,
                     "occupied": false,
                     "spot_id": "spot_11"
                 },
                 {
-                    "x": 460,
-                    "y": 600,
+                    "x": 1308,
+                    "y": 722,
                     "occupied": false,
                     "spot_id": "spot_12"
                 },
                 {
-                    "x": 474,
-                    "y": 546,
+                    "x": 1372,
+                    "y": 656,
                     "occupied": false,
                     "spot_id": "spot_13"
                 },
                 {
-                    "x": 606,
-                    "y": 546,
+                    "x": 1082,
+                    "y": 598,
                     "occupied": false,
                     "spot_id": "spot_14"
                 },
                 {
-                    "x": 992,
-                    "y": 588,
+                    "x": 998,
+                    "y": 606,
                     "occupied": false,
                     "spot_id": "spot_15"
                 },
                 {
-                    "x": 990,
-                    "y": 606,
+                    "x": 854,
+                    "y": 586,
                     "occupied": false,
                     "spot_id": "spot_16"
                 },
                 {
-                    "x": 968,
-                    "y": 670,
+                    "x": 784,
+                    "y": 528,
                     "occupied": false,
                     "spot_id": "spot_17"
                 },
                 {
-                    "x": 868,
-                    "y": 690,
+                    "x": 522,
+                    "y": 374,
                     "occupied": false,
                     "spot_id": "spot_18"
                 },
                 {
-                    "x": 834,
-                    "y": 694,
+                    "x": 228,
+                    "y": 212,
                     "occupied": false,
                     "spot_id": "spot_19"
                 },
                 {
-                    "x": 780,
-                    "y": 676,
+                    "x": 200,
+                    "y": 212,
                     "occupied": false,
                     "spot_id": "spot_20"
                 },
                 {
-                    "x": 738,
-                    "y": 646,
+                    "x": 218,
+                    "y": 392,
                     "occupied": false,
                     "spot_id": "spot_21"
                 },
                 {
-                    "x": 714,
-                    "y": 622,
+                    "x": 328,
+                    "y": 352,
                     "occupied": false,
                     "spot_id": "spot_22"
                 },
                 {
-                    "x": 616,
-                    "y": 568,
+                    "x": 352,
+                    "y": 288,
                     "occupied": false,
                     "spot_id": "spot_23"
                 },
                 {
-                    "x": 596,
-                    "y": 634,
+                    "x": 538,
+                    "y": 144,
                     "occupied": false,
                     "spot_id": "spot_24"
                 },
                 {
-                    "x": 594,
-                    "y": 680,
+                    "x": 736,
+                    "y": 76,
                     "occupied": false,
                     "spot_id": "spot_25"
                 },
                 {
-                    "x": 622,
-                    "y": 700,
+                    "x": 1106,
+                    "y": 262,
                     "occupied": false,
                     "spot_id": "spot_26"
                 },
                 {
-                    "x": 754,
-                    "y": 720,
+                    "x": 1260,
+                    "y": 336,
                     "occupied": false,
                     "spot_id": "spot_27"
                 },
                 {
-                    "x": 782,
-                    "y": 722,
+                    "x": 1298,
+                    "y": 400,
                     "occupied": false,
                     "spot_id": "spot_28"
                 },
                 {
-                    "x": 802,
-                    "y": 730,
+                    "x": 1450,
+                    "y": 690,
                     "occupied": false,
                     "spot_id": "spot_29"
                 },
                 {
-                    "x": 836,
-                    "y": 750,
+                    "x": 1472,
+                    "y": 800,
                     "occupied": false,
                     "spot_id": "spot_30"
                 },
                 {
-                    "x": 858,
-                    "y": 768,
+                    "x": 1326,
+                    "y": 836,
                     "occupied": false,
                     "spot_id": "spot_31"
                 },
                 {
-                    "x": 862,
-                    "y": 786,
+                    "x": 922,
+                    "y": 822,
                     "occupied": false,
                     "spot_id": "spot_32"
                 },
                 {
-                    "x": 856,
-                    "y": 796,
+                    "x": 700,
+                    "y": 836,
                     "occupied": false,
                     "spot_id": "spot_33"
                 },
                 {
-                    "x": 740,
-                    "y": 788,
+                    "x": 562,
+                    "y": 828,
                     "occupied": false,
                     "spot_id": "spot_34"
                 },
                 {
-                    "x": 668,
-                    "y": 704,
+                    "x": 372,
+                    "y": 818,
                     "occupied": false,
                     "spot_id": "spot_35"
                 },
                 {
-                    "x": 666,
-                    "y": 678,
+                    "x": 292,
+                    "y": 806,
                     "occupied": false,
                     "spot_id": "spot_36"
                 },
                 {
-                    "x": 772,
-                    "y": 674,
+                    "x": 206,
+                    "y": 780,
                     "occupied": false,
                     "spot_id": "spot_37"
                 },
                 {
-                    "x": 870,
-                    "y": 722,
+                    "x": 288,
+                    "y": 744,
                     "occupied": false,
                     "spot_id": "spot_38"
+                },
+                {
+                    "x": 348,
+                    "y": 668,
+                    "occupied": false,
+                    "spot_id": "spot_39"
+                },
+                {
+                    "x": 380,
+                    "y": 500,
+                    "occupied": false,
+                    "spot_id": "spot_40"
+                },
+                {
+                    "x": 494,
+                    "y": 374,
+                    "occupied": false,
+                    "spot_id": "spot_41"
+                },
+                {
+                    "x": 690,
+                    "y": 488,
+                    "occupied": false,
+                    "spot_id": "spot_42"
+                },
+                {
+                    "x": 704,
+                    "y": 584,
+                    "occupied": false,
+                    "spot_id": "spot_43"
+                },
+                {
+                    "x": 752,
+                    "y": 668,
+                    "occupied": false,
+                    "spot_id": "spot_44"
+                },
+                {
+                    "x": 1046,
+                    "y": 260,
+                    "occupied": false,
+                    "spot_id": "spot_45"
+                },
+                {
+                    "x": 942,
+                    "y": 300,
+                    "occupied": false,
+                    "spot_id": "spot_46"
+                },
+                {
+                    "x": 756,
+                    "y": 324,
+                    "occupied": false,
+                    "spot_id": "spot_47"
+                },
+                {
+                    "x": 590,
+                    "y": 308,
+                    "occupied": false,
+                    "spot_id": "spot_48"
+                },
+                {
+                    "x": 1158,
+                    "y": 512,
+                    "occupied": false,
+                    "spot_id": "spot_49"
+                },
+                {
+                    "x": 1264,
+                    "y": 602,
+                    "occupied": false,
+                    "spot_id": "spot_50"
+                },
+                {
+                    "x": 1198,
+                    "y": 778,
+                    "occupied": false,
+                    "spot_id": "spot_51"
+                },
+                {
+                    "x": 934,
+                    "y": 728,
+                    "occupied": false,
+                    "spot_id": "spot_52"
+                },
+                {
+                    "x": 892,
+                    "y": 632,
+                    "occupied": false,
+                    "spot_id": "spot_53"
+                },
+                {
+                    "x": 912,
+                    "y": 470,
+                    "occupied": false,
+                    "spot_id": "spot_54"
+                },
+                {
+                    "x": 884,
+                    "y": 352,
+                    "occupied": false,
+                    "spot_id": "spot_55"
+                },
+                {
+                    "x": 758,
+                    "y": 270,
+                    "occupied": false,
+                    "spot_id": "spot_56"
+                },
+                {
+                    "x": 470,
+                    "y": 260,
+                    "occupied": false,
+                    "spot_id": "spot_57"
+                },
+                {
+                    "x": 356,
+                    "y": 332,
+                    "occupied": false,
+                    "spot_id": "spot_58"
+                },
+                {
+                    "x": 384,
+                    "y": 524,
+                    "occupied": false,
+                    "spot_id": "spot_59"
+                },
+                {
+                    "x": 520,
+                    "y": 616,
+                    "occupied": false,
+                    "spot_id": "spot_60"
+                },
+                {
+                    "x": 602,
+                    "y": 504,
+                    "occupied": false,
+                    "spot_id": "spot_61"
+                },
+                {
+                    "x": 458,
+                    "y": 450,
+                    "occupied": false,
+                    "spot_id": "spot_62"
+                },
+                {
+                    "x": 408,
+                    "y": 442,
+                    "occupied": false,
+                    "spot_id": "spot_63"
+                },
+                {
+                    "x": 324,
+                    "y": 470,
+                    "occupied": false,
+                    "spot_id": "spot_64"
+                },
+                {
+                    "x": 296,
+                    "y": 524,
+                    "occupied": false,
+                    "spot_id": "spot_65"
+                },
+                {
+                    "x": 228,
+                    "y": 650,
+                    "occupied": false,
+                    "spot_id": "spot_66"
+                },
+                {
+                    "x": 116,
+                    "y": 526,
+                    "occupied": false,
+                    "spot_id": "spot_67"
+                },
+                {
+                    "x": 158,
+                    "y": 310,
+                    "occupied": false,
+                    "spot_id": "spot_68"
+                },
+                {
+                    "x": 138,
+                    "y": 128,
+                    "occupied": false,
+                    "spot_id": "spot_69"
+                },
+                {
+                    "x": 338,
+                    "y": 44,
+                    "occupied": false,
+                    "spot_id": "spot_70"
+                },
+                {
+                    "x": 698,
+                    "y": 100,
+                    "occupied": false,
+                    "spot_id": "spot_71"
+                },
+                {
+                    "x": 712,
+                    "y": 138,
+                    "occupied": false,
+                    "spot_id": "spot_72"
+                },
+                {
+                    "x": 664,
+                    "y": 188,
+                    "occupied": false,
+                    "spot_id": "spot_73"
+                },
+                {
+                    "x": 506,
+                    "y": 154,
+                    "occupied": false,
+                    "spot_id": "spot_74"
+                },
+                {
+                    "x": 484,
+                    "y": 216,
+                    "occupied": false,
+                    "spot_id": "spot_75"
+                },
+                {
+                    "x": 402,
+                    "y": 178,
+                    "occupied": false,
+                    "spot_id": "spot_76"
+                },
+                {
+                    "x": 414,
+                    "y": 126,
+                    "occupied": false,
+                    "spot_id": "spot_77"
+                },
+                {
+                    "x": 1084,
+                    "y": 102,
+                    "occupied": false,
+                    "spot_id": "spot_78"
+                },
+                {
+                    "x": 1248,
+                    "y": 96,
+                    "occupied": false,
+                    "spot_id": "spot_79"
+                },
+                {
+                    "x": 1344,
+                    "y": 108,
+                    "occupied": false,
+                    "spot_id": "spot_80"
+                },
+                {
+                    "x": 1436,
+                    "y": 242,
+                    "occupied": false,
+                    "spot_id": "spot_81"
+                },
+                {
+                    "x": 1420,
+                    "y": 390,
+                    "occupied": false,
+                    "spot_id": "spot_82"
+                },
+                {
+                    "x": 1416,
+                    "y": 514,
+                    "occupied": false,
+                    "spot_id": "spot_83"
+                },
+                {
+                    "x": 1104,
+                    "y": 512,
+                    "occupied": false,
+                    "spot_id": "spot_84"
+                },
+                {
+                    "x": 972,
+                    "y": 438,
+                    "occupied": false,
+                    "spot_id": "spot_85"
+                },
+                {
+                    "x": 1072,
+                    "y": 408,
+                    "occupied": false,
+                    "spot_id": "spot_86"
+                },
+                {
+                    "x": 724,
+                    "y": 412,
+                    "occupied": false,
+                    "spot_id": "spot_87"
+                },
+                {
+                    "x": 592,
+                    "y": 384,
+                    "occupied": false,
+                    "spot_id": "spot_88"
+                },
+                {
+                    "x": 460,
+                    "y": 494,
+                    "occupied": false,
+                    "spot_id": "spot_89"
+                },
+                {
+                    "x": 260,
+                    "y": 590,
+                    "occupied": false,
+                    "spot_id": "spot_90"
+                },
+                {
+                    "x": 172,
+                    "y": 694,
+                    "occupied": false,
+                    "spot_id": "spot_91"
+                },
+                {
+                    "x": 124,
+                    "y": 806,
+                    "occupied": false,
+                    "spot_id": "spot_92"
+                },
+                {
+                    "x": 98,
+                    "y": 884,
+                    "occupied": false,
+                    "spot_id": "spot_93"
+                },
+                {
+                    "x": 452,
+                    "y": 850,
+                    "occupied": false,
+                    "spot_id": "spot_94"
+                },
+                {
+                    "x": 710,
+                    "y": 862,
+                    "occupied": false,
+                    "spot_id": "spot_95"
+                },
+                {
+                    "x": 1216,
+                    "y": 868,
+                    "occupied": false,
+                    "spot_id": "spot_96"
+                },
+                {
+                    "x": 1430,
+                    "y": 848,
+                    "occupied": false,
+                    "spot_id": "spot_97"
+                },
+                {
+                    "x": 1562,
+                    "y": 832,
+                    "occupied": false,
+                    "spot_id": "spot_98"
+                },
+                {
+                    "x": 1442,
+                    "y": 746,
+                    "occupied": false,
+                    "spot_id": "spot_99"
+                },
+                {
+                    "x": 1308,
+                    "y": 720,
+                    "occupied": false,
+                    "spot_id": "spot_100"
+                },
+                {
+                    "x": 1226,
+                    "y": 714,
+                    "occupied": false,
+                    "spot_id": "spot_101"
+                },
+                {
+                    "x": 1118,
+                    "y": 702,
+                    "occupied": false,
+                    "spot_id": "spot_102"
+                },
+                {
+                    "x": 992,
+                    "y": 702,
+                    "occupied": false,
+                    "spot_id": "spot_103"
+                },
+                {
+                    "x": 892,
+                    "y": 706,
+                    "occupied": false,
+                    "spot_id": "spot_104"
+                },
+                {
+                    "x": 712,
+                    "y": 682,
+                    "occupied": false,
+                    "spot_id": "spot_105"
+                },
+                {
+                    "x": 548,
+                    "y": 670,
+                    "occupied": false,
+                    "spot_id": "spot_106"
+                },
+                {
+                    "x": 452,
+                    "y": 662,
+                    "occupied": false,
+                    "spot_id": "spot_107"
+                },
+                {
+                    "x": 438,
+                    "y": 678,
+                    "occupied": false,
+                    "spot_id": "spot_108"
+                },
+                {
+                    "x": 436,
+                    "y": 716,
+                    "occupied": false,
+                    "spot_id": "spot_109"
+                },
+                {
+                    "x": 532,
+                    "y": 750,
+                    "occupied": false,
+                    "spot_id": "spot_110"
+                },
+                {
+                    "x": 546,
+                    "y": 736,
+                    "occupied": false,
+                    "spot_id": "spot_111"
+                },
+                {
+                    "x": 642,
+                    "y": 632,
+                    "occupied": false,
+                    "spot_id": "spot_112"
+                },
+                {
+                    "x": 576,
+                    "y": 426,
+                    "occupied": false,
+                    "spot_id": "spot_113"
+                },
+                {
+                    "x": 310,
+                    "y": 358,
+                    "occupied": false,
+                    "spot_id": "spot_114"
+                },
+                {
+                    "x": 218,
+                    "y": 298,
+                    "occupied": false,
+                    "spot_id": "spot_115"
+                },
+                {
+                    "x": 404,
+                    "y": 110,
+                    "occupied": false,
+                    "spot_id": "spot_116"
+                },
+                {
+                    "x": 732,
+                    "y": 110,
+                    "occupied": false,
+                    "spot_id": "spot_117"
+                },
+                {
+                    "x": 866,
+                    "y": 130,
+                    "occupied": false,
+                    "spot_id": "spot_118"
+                },
+                {
+                    "x": 878,
+                    "y": 126,
+                    "occupied": false,
+                    "spot_id": "spot_119"
+                },
+                {
+                    "x": 944,
+                    "y": 150,
+                    "occupied": false,
+                    "spot_id": "spot_120"
+                },
+                {
+                    "x": 970,
+                    "y": 152,
+                    "occupied": false,
+                    "spot_id": "spot_121"
+                },
+                {
+                    "x": 1086,
+                    "y": 162,
+                    "occupied": false,
+                    "spot_id": "spot_122"
+                },
+                {
+                    "x": 1192,
+                    "y": 180,
+                    "occupied": false,
+                    "spot_id": "spot_123"
+                },
+                {
+                    "x": 1264,
+                    "y": 204,
+                    "occupied": false,
+                    "spot_id": "spot_124"
+                },
+                {
+                    "x": 1304,
+                    "y": 240,
+                    "occupied": false,
+                    "spot_id": "spot_125"
+                },
+                {
+                    "x": 1346,
+                    "y": 244,
+                    "occupied": false,
+                    "spot_id": "spot_126"
+                },
+                {
+                    "x": 1416,
+                    "y": 158,
+                    "occupied": false,
+                    "spot_id": "spot_127"
+                },
+                {
+                    "x": 1480,
+                    "y": 114,
+                    "occupied": false,
+                    "spot_id": "spot_128"
+                },
+                {
+                    "x": 1518,
+                    "y": 280,
+                    "occupied": false,
+                    "spot_id": "spot_129"
+                },
+                {
+                    "x": 1494,
+                    "y": 348,
+                    "occupied": false,
+                    "spot_id": "spot_130"
+                },
+                {
+                    "x": 1490,
+                    "y": 484,
+                    "occupied": false,
+                    "spot_id": "spot_131"
+                },
+                {
+                    "x": 1524,
+                    "y": 564,
+                    "occupied": false,
+                    "spot_id": "spot_132"
+                },
+                {
+                    "x": 1530,
+                    "y": 596,
+                    "occupied": false,
+                    "spot_id": "spot_133"
+                },
+                {
+                    "x": 1530,
+                    "y": 664,
+                    "occupied": false,
+                    "spot_id": "spot_134"
+                },
+                {
+                    "x": 1530,
+                    "y": 712,
+                    "occupied": false,
+                    "spot_id": "spot_135"
                 }
             ]
         }
