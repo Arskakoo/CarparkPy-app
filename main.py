@@ -7,10 +7,10 @@ from ultralytics import YOLO
 from dotenv import load_dotenv
 
 # YOLOv8x tunnistaa ajoneuvot parhaiten
-model = YOLO('yolov8x.pt')
+model = YOLO('YOLOv8x.pt')
 
 # Ajoneuvo luokat YOLO
-vehicle_classes = [2, 3, 5, 7, 10]
+vehicle_classes = [2, 3, 5, 7]  # 2, car = 3, bus = 5, truck = 7
 log_filename = "parking_log.json"
 last_cleanup_time = time.time()
 stats_data = []
@@ -218,7 +218,7 @@ def take_photo():
     # kuvan ottamminen ja tallentaminen conffausta varten
     load_dotenv()
     ip_camera_url = os.getenv("IP_CAMERA_URL")
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(ip_camera_url)
 
     if not cap.isOpened():
         print("Error: Could not open camera.")
@@ -241,7 +241,7 @@ def capture_and_detect():
         while True:
             load_dotenv()
             ip_camera_url = os.getenv("IP_CAMERA_URL")
-            cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture(ip_camera_url)
 
             if not cap.isOpened():
                 print("Error: Could not open camera.")
