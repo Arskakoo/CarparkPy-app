@@ -7,10 +7,10 @@ from ultralytics import YOLO
 from dotenv import load_dotenv
 
 # YOLOv8x tunnistaa ajoneuvot parhaiten
-model = YOLO('yolov8x.pt')
+model = YOLO('YOLOv8x.pt')
 
 # Ajoneuvo luokat YOLO
-vehicle_classes = [2, 3, 5, 7, 10]
+vehicle_classes = [2, 3, 5, 7]  # 2, car = 3, bus = 5, truck = 7
 log_filename = "parking_log.json"
 last_cleanup_time = time.time()
 stats_data = []
