@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -14,7 +15,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import React, { useEffect, useState } from "react";
 
 const ParkSelect = () => {
   const [data, setData] = useState({ places: [] });
@@ -22,19 +22,21 @@ const ParkSelect = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const REFRESH_INTERVAL = 1000; // 1 second
+
+  const fetchData = () => {
     fetch("http://127.0.0.1:5000/api/data")
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Verkkovastaus ei ollut OK");
+          throw new Error("Failed to fetch data");
         }
         return response.json();
       })
       .then((fetchedData) => {
         if (fetchedData.ParkingLot) {
-          setData({ places: fetchedData.ParkingLot }); // Aseta ParkingLot data
+          setData({ places: fetchedData.ParkingLot });
         } else {
-          throw new Error("Virheellinen datan muoto");
+          throw new Error("Invalid data format");
         }
         setLoading(false);
       })
@@ -42,11 +44,17 @@ const ParkSelect = () => {
         setError(error.message);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchData(); // Initial fetch
+    const interval = setInterval(fetchData, REFRESH_INTERVAL); // Set interval for refreshing data
+    return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   const handleSelectChange = (id) => {
     setSelectedParkId(id);
-    console.log("Valittu Park ID:", id);
+    console.log("Selected Park ID:", id);
   };
 
   const selectedPark =
@@ -54,7 +62,7 @@ const ParkSelect = () => {
     data.places.find((place) => place.id === parseInt(selectedParkId, 10));
 
   return (
-    <div className="w-full mt-36 flex-grow ">
+    <div className="w-full mt-36 flex-grow">
       <div className="m-auto justify-auto flex text-center h-full lg:w-[20%] md-[0%] sm:w-[40%] flex-col">
         <p className="p-4 font-bold text-2xl">
           Valitse <span className="text-blue-500">parkkipaikka</span>
@@ -73,7 +81,7 @@ const ParkSelect = () => {
               {data.places.map((place) => (
                 <SelectItem
                   key={place.id}
-                  value={place.id.toString()} // Muunnetaan id merkkijonoksi
+                  value={place.id.toString()}
                   className="bg-white/0 font-bold"
                 >
                   {place.name} -{" "}

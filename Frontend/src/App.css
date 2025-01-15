@@ -11,7 +11,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", serif;
-  background-color: #fafbfd;
+  background-color: whitesmoke;
   color: black;
 }
 
@@ -28,11 +28,6 @@ body {
   gap: var(--size-scaler) !important;
   scroll-behavior: smooth;
   overflow: hidden;
-}
-
-header,
-main {
-  padding: calc(var(--size-scaler) * 1) !important;
 }
 
 main {

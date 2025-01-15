@@ -45,7 +45,7 @@ const MainStatus = () => {
             <p className="bg-white flex gap-3">
               <p className="bg-white mt-auto">
                 <span className="material-symbols-rounded text-red-500/80 bg-white/0 p-1 rounded-md">
-                  warning
+                  cloud_alert
                 </span>
               </p>
               <p className="bg-white font-semibold">
@@ -96,9 +96,19 @@ const MainStatus = () => {
           <div key={index} className="border-b p-2 flex w-full font-semibold ">
             <div className="flex gap-4 w-fit">
               {status === "recent" ? (
-                <p className="bg-green-400 w-4 h-4 rounded-md m-auto"></p>
+                <span
+                  class="material-symbols-rounded  text-green-500/80 "
+                  title="Tiedot ovat päivtetty alle 15 minuuttia sitten"
+                >
+                  cloud_done
+                </span>
               ) : (
-                <p className="bg-red-400 w-4 h-4 rounded-md m-auto"></p>
+                <span
+                  class="material-symbols-rounded text-red-500/80 animate-pulse"
+                  title="Tietoja ei ole päivitetty yli 15 minuuttiin"
+                >
+                  cloud_alert
+                </span>
               )}
               <p className="m-auto font-bold flex gap-2">
                 {lot.name}
@@ -114,7 +124,7 @@ const MainStatus = () => {
               className="mt-2 ml-auto text-sm text-gray-500 flex gap-1 w-fit"
               title=""
             >
-              <p className="font-bold text-orange-400">Päivitetty:</p>
+              <p className="font-bold text-black/80">Viimeisin päivitys:</p>
               {lotUpdateTime.toLocaleString()}
             </div>
           </div>

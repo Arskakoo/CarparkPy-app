@@ -7,10 +7,10 @@ from ultralytics import YOLO
 from dotenv import load_dotenv
 
 # YOLOv8x tunnistaa ajoneuvot parhaiten
-model = YOLO('yolov8x.pt')
+model = YOLO('YOLOv8x.pt')
 
 # Ajoneuvo luokat YOLO
-vehicle_classes = [2, 3, 5, 7, 10]
+vehicle_classes = [2, 3, 5, 7]  # 2, car = 3, bus = 5, truck = 7
 log_filename = "parking_log.json"
 last_cleanup_time = time.time()
 stats_data = []
@@ -40,7 +40,7 @@ def write_stats():
             json.dump(stats_data, stats_file, indent=4)
 
         print("Updated stats.json")
-        time.sleep(600)  # Odottaa 10min ennenkuin tallentaa seuraavan tiedon 
+        time.sleep(600)  # Odottaa 10min ennenkuin tallentaa seuraavan tiedon ja ensimmäisen
 
 stats_thread = threading.Thread(target=write_stats, daemon=True)
 stats_thread.start()
@@ -89,7 +89,7 @@ def save_parking_spots_to_json(coords):
             {
                 "id": 1,
                 "name": "Example Park",
-                "location": "Example Address, 12",
+                "location": "Hepolamminkatu 10",
                 "detection_coords": []
             }
         ]
@@ -138,8 +138,8 @@ def log_to_json(timestamp, occupied_count, unoccupied_count):
         "ParkingLot": [
             {
                 "id": parking_lot_id,
-                "name": parking_lot.get("name", "Unnamed Lot"),  
-                "location": parking_lot.get("location", "Unknown Location"),
+                "name": parking_lot.get("name", "Unnamed Lot"),  # Use a default if 'name' is missing
+                "location": parking_lot.get("location", "Unknown Location"),  # Default location
                 "timestamp": timestamp,
                 "occupied_spots": occupied_count,
                 "unoccupied_spots": unoccupied_count,
@@ -218,7 +218,7 @@ def take_photo():
     # kuvan ottamminen ja tallentaminen conffausta varten
     load_dotenv()
     ip_camera_url = os.getenv("IP_CAMERA_URL")
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(ip_camera_url)
 
     if not cap.isOpened():
         print("Error: Could not open camera.")
@@ -241,7 +241,7 @@ def capture_and_detect():
         while True:
             load_dotenv()
             ip_camera_url = os.getenv("IP_CAMERA_URL")
-            cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture(ip_camera_url)
 
             if not cap.isOpened():
                 print("Error: Could not open camera.")
