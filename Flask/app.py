@@ -79,4 +79,4 @@ def get_output_photo():
 
 if __name__ == '__main__':
     print("[INFO] Starting Flask app")  
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
