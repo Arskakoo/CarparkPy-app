@@ -1,14 +1,58 @@
-from flask import Flask, jsonify, send_file
+from flask import Flask, jsonify, send_file, request, session, redirect, url_for, render_template_string
 from flask_cors import CORS
 import json
 import os
-import time
 
 app = Flask(__name__)
 CORS(app)
 
+# Määritä salainen avain istuntojen hallintaan
+app.secret_key = os.urandom(24)
+
+# Simuloitu käyttäjälista (tuotannossa käyttäjätietojen pitäisi tulla tietokannasta)
+users = {"admin": "admin"}
+
+# Kirjautumisreitti
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        if username in users and users[username] == password:
+            session['user'] = username  # Tallenna käyttäjä istuntoon
+            return redirect(url_for('dashboard'))
+        else:
+            return "Virheelliset kirjautumistiedot, yritä uudelleen", 401
+    
+    return '''
+        <form method="POST">
+            Käyttäjätunnus: <input type="text" name="username">
+            Salasana: <input type="password" name="password">
+            <input type="submit" value="Kirjaudu">
+        </form>
+    '''
+
+# Reitti suojattuun alueeseen
+@app.route('/dashboard')
+def dashboard():
+    if 'user' in session:
+        return jsonify({"message": f"Tervetuloa {session['user']}!"})
+    else:
+        return redirect(url_for('login'))
+
+# Kirjautumisesta ulos
+@app.route('/logout')
+def logout():
+    session.pop('user', None)  # Poistaa käyttäjän istunnosta
+    return redirect(url_for('login'))
+
+# API-reitit, jotka vaativat kirjautumisen
 @app.route('/api/stats')
 def get_stats():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
     stats_filename = os.path.join(os.path.dirname(__file__), "./../stats.json")
     if os.path.exists(stats_filename):
         with open(stats_filename, "r") as file:
@@ -20,6 +64,9 @@ def get_stats():
 
 @app.route('/api/notifications')
 def get_notifications():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
     notifications_file = os.path.join(os.path.dirname(__file__), "./../Notification.json")
     if os.path.exists(notifications_file):
         with open(notifications_file, "r") as file:
@@ -29,10 +76,11 @@ def get_notifications():
         print("[ERROR] Notifications file 'Notification.json' not found")
         return jsonify({"error": "Notifications file not found"}), 404
 
-
-# Hakee datan logista josta muokkaa uuden urlin jossa tarvittava data
 @app.route('/api/lastupdate')
 def get_last_update():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
     json_file = os.path.join(os.path.dirname(__file__), "../parking_log.json")
     
     if not os.path.exists(json_file):
@@ -55,9 +103,11 @@ def get_last_update():
     
     return jsonify(status_data)
 
-# Näyttää koko Login
 @app.route('/api/data')
 def get_data():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
     json_file = os.path.join(os.path.dirname(__file__), "./../parking_log.json")
     if os.path.exists(json_file):
         with open(json_file, "r") as file:
@@ -67,9 +117,11 @@ def get_data():
         print("[ERROR] Data file 'parking_log.json' not found")
         return jsonify({"error": "Data file not found"}), 404
 
-# Näyttää kuvan
 @app.route('/api/photo')
 def get_output_photo():
+    if 'user' not in session:
+        return redirect(url_for('login'))
+
     photo_path = os.path.join(os.path.dirname(__file__), "./../photo.jpg")
     if os.path.exists(photo_path):
         return send_file(photo_path, mimetype='image/jpeg')

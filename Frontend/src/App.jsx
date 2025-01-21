@@ -6,7 +6,7 @@ import ParkSelect from "./components/ParkSelect";
 import ParkCharts from "./components/ParkChart";
 import ParkPeak from "./components/ParkPeak";
 import MainStatus from "./components/MainStatus";
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 function App() {
   const [activeIndex, setActiveIndex] = useState(() => {
     const savedIndex = localStorage.getItem("activeTab");
