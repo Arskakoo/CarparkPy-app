@@ -6,14 +6,13 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Hardcoded username and password (for simplicity)
+
+# Käyttäjätunnukset apiin
 USERNAME = "admin"
 PASSWORD = "admin"
 
-# Simple in-memory session (can be replaced with a more secure method)
+# Kirjautumis sivu
 logged_in = False
-
-# Serve HTML login form
 @app.route('/login', methods=['GET'])
 def login():
     return render_template_string("""
@@ -22,7 +21,7 @@ def login():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
+        <title></title>
         <script>
             function submitLogin() {
                 var username = document.getElementById('username').value;
@@ -38,28 +37,27 @@ def login():
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        window.location.href = '/api/stats';  // Redirect to the stats page if login is successful
+                        window.location.href = '/api/data';  // Redirect to the stats page if login is successful
                     } else {
-                        alert('Invalid username or password');
+
                     }
                 });
             }
         </script>
     </head>
     <body>
-        <h2>Login</h2>
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
-        <br><br>
-        <label for="password">Password:</label>
+        <span>User</span>
+        <input type="password" id="username" required>
+        </br></br>
+        <span>Pass</span>
         <input type="password" id="password" required>
-        <br><br>
+        </br></br>
         <button onclick="submitLogin()">Login</button>
     </body>
     </html>
     """)
-
-# Handle POST request to login
+    
+# Kirjautuminen
 @app.route('/api/login', methods=['POST'])
 def api_login():
     global logged_in
@@ -73,8 +71,28 @@ def api_login():
     else:
         logged_in = False
         return jsonify({"success": False})
+    
+# uloskirjautuminen 
+@app.route('/logout', methods=['GET'])
+def logout():
+    global logged_in
+    logged_in = False
+    return jsonify({"message": "You have logged out successfully."})
 
-
+@app.route('/api/data')
+def get_data():
+    if not logged_in:
+        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+    
+    json_file = os.path.join(os.path.dirname(__file__), "./../parking_log.json")
+    if os.path.exists(json_file):
+        with open(json_file, "r") as file:
+            data = json.load(file)
+        return jsonify(data)
+    else:
+        print("[ERROR] Data file 'parking_log.json' not found")
+        return jsonify({"error": "Data file not found"}), 404
+    
 @app.route('/api/stats')
 def get_stats():
     if not logged_in:
@@ -126,20 +144,6 @@ def get_last_update():
     ]
     
     return jsonify(status_data)
-
-@app.route('/api/data')
-def get_data():
-    if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
-    
-    json_file = os.path.join(os.path.dirname(__file__), "./../parking_log.json")
-    if os.path.exists(json_file):
-        with open(json_file, "r") as file:
-            data = json.load(file)
-        return jsonify(data)
-    else:
-        print("[ERROR] Data file 'parking_log.json' not found")
-        return jsonify({"error": "Data file not found"}), 404
 
 @app.route('/api/photo')
 def get_output_photo():
