@@ -82,7 +82,7 @@ def logout():
 @app.route('/api/data')
 def get_data():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access."}), 401
     
     json_file = os.path.join(os.path.dirname(__file__), "./../parking_log.json")
     if os.path.exists(json_file):
@@ -96,7 +96,7 @@ def get_data():
 @app.route('/api/stats')
 def get_stats():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access."}), 401
     
     stats_filename = os.path.join(os.path.dirname(__file__), "./../stats.json")
     if os.path.exists(stats_filename):
@@ -110,7 +110,7 @@ def get_stats():
 @app.route('/api/notifications')
 def get_notifications():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access."}), 401
     
     notifications_file = os.path.join(os.path.dirname(__file__), "./../Notification.json")
     if os.path.exists(notifications_file):
@@ -148,7 +148,7 @@ def get_last_update():
 @app.route('/api/photo')
 def get_output_photo():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access."}), 401
     
     photo_path = os.path.join(os.path.dirname(__file__), "./../photo.jpg")
     if os.path.exists(photo_path):
