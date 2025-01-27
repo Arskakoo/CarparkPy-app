@@ -32,16 +32,15 @@ def write_stats():
                     "unoccupied_spots": parking_lot["unoccupied_spots"]
                 })
                 
-        # Poistaa yli 24h tunnin datan
+        # Poistaa viikonvanhan tiedon
         current_time = time.time()
-        stats_data = [entry for entry in stats_data if current_time - time.mktime(time.strptime(entry["timestamp"], "%Y-%m-%d %H:%M:%S")) <= 86400]
+        stats_data = [entry for entry in stats_data if current_time - time.mktime(time.strptime(entry["timestamp"], "%Y-%m-%d %H:%M:%S")) <= 604800]  # 604800s = viikko
         stats_filename = "stats.json"
         with open(stats_filename, "w") as stats_file:
             json.dump(stats_data, stats_file, indent=4)
 
         print("Updated stats.json")
-        time.sleep(600)  # Odottaa 10min ennenkuin tallentaa seuraavan tiedon ja ensimmäisen
-
+        time.sleep(600)  # kerää 10min välein dataa
 stats_thread = threading.Thread(target=write_stats, daemon=True)
 stats_thread.start()
 
@@ -89,7 +88,7 @@ def save_parking_spots_to_json(coords):
             {
                 "id": 1,
                 "name": "Example Park",
-                "location": "Hepolamminkatu 10",
+                "location": "Example 10, Examplecity",
                 "detection_coords": []
             }
         ]

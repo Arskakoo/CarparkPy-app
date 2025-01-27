@@ -6,6 +6,8 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+
+# Käyttäjätunnukset apiin
 USERNAME = "admin"
 PASSWORD = "admin"
 
@@ -19,7 +21,7 @@ def login():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
+        <title></title>
         <script>
             function submitLogin() {
                 var username = document.getElementById('username').value;
@@ -35,22 +37,21 @@ def login():
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        window.location.href = '/api/stats';  // Redirect to the stats page if login is successful
+                        window.location.href = '/api/data';  // Redirect to the stats page if login is successful
                     } else {
-                        alert('Invalid username or password');
+
                     }
                 });
             }
         </script>
     </head>
     <body>
-        <h2>Login</h2>
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
-        <br><br>
-        <label for="password">Password:</label>
+        <span>User</span>
+        <input type="password" id="username" required>
+        </br></br>
+        <span>Pass</span>
         <input type="password" id="password" required>
-        <br><br>
+        </br></br>
         <button onclick="submitLogin()">Login</button>
     </body>
     </html>
@@ -75,8 +76,8 @@ def api_login():
 @app.route('/logout', methods=['GET'])
 def logout():
     global logged_in
-    logged_in = False  # Aseta kirjautumistila epäkohdaksi
-    return jsonify({"success": True, "message": "You have logged out successfully."})
+    logged_in = False
+    return jsonify({"message": "You have logged out successfully."})
 
 @app.route('/api/data')
 def get_data():
