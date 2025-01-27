@@ -88,7 +88,7 @@ def save_parking_spots_to_json(coords):
             {
                 "id": 1,
                 "name": "Example Park",
-                "location": "Example 10, Examplecity",
+                "location": "Example 10",
                 "detection_coords": []
             }
         ]

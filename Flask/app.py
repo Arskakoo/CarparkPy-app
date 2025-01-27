@@ -37,7 +37,7 @@ def login():
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        window.location.href = '/api/data';  // Redirect to the stats page if login is successful
+                        window.location.href = '/api/data';
                     } else {
 
                     }
