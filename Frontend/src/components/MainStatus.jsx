@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
-
+ 
 const MainStatus = () => {
   const [statusData, setStatusData] = useState([]);
   const [lastUpdateTime, setLastUpdateTime] = useState(null);
   const [notifiedLots, setNotifiedLots] = useState(new Set());
   const [toastIds, setToastIds] = useState({});
-
+ 
   useEffect(() => {
     const fetchStatusData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/api/lastupdate");
+        const response = await fetch("http://localhost:5000/api/lastupdate");
         const data = await response.json();
         setStatusData(data);
-
+ 
         if (data.length > 0) {
           const latestUpdate = new Date(data[0].last_update.replace(/ /g, "T"));
           setLastUpdateTime(latestUpdate.toISOString());
@@ -22,20 +22,20 @@ const MainStatus = () => {
         console.error("Failed to fetch status data:", error);
       }
     };
-
+ 
     fetchStatusData();
     const interval = setInterval(fetchStatusData, 1000);
-
+ 
     return () => clearInterval(interval);
   }, []);
-
+ 
   const getStatus = (lastUpdate) => {
     const lastUpdateTime = new Date(lastUpdate.replace(/ /g, "T"));
     const timeDifference = Date.now() - lastUpdateTime.getTime();
-
-    return timeDifference < 100000 ? "recent" : "over15"; 
+ 
+    return timeDifference < 900000 ? "recent" : "over15";
   };
-
+ 
   useEffect(() => {
     statusData.forEach((lot) => {
       const status = getStatus(lot.last_update);
@@ -59,16 +59,16 @@ const MainStatus = () => {
           ),
           { duration: Infinity }
         );
-
+ 
         setToastIds((prev) => ({ ...prev, [lot.name]: toastId }));
-
+ 
         setNotifiedLots((prevNotified) => new Set(prevNotified.add(lot.name)));
       } else if (status === "recent" && notifiedLots.has(lot.name)) {
         const toastId = toastIds[lot.name];
         if (toastId) {
           toast.dismiss(toastId);
         }
-
+ 
         setNotifiedLots((prevNotified) => {
           const updatedNotified = new Set(prevNotified);
           updatedNotified.delete(lot.name);
@@ -77,7 +77,7 @@ const MainStatus = () => {
       }
     });
   }, [statusData, notifiedLots, toastIds]);
-
+ 
   return (
     <div className="p-6 select-none">
       <div className="border-b flex pb-10">
@@ -86,14 +86,14 @@ const MainStatus = () => {
           Versio 3.0
         </p>
       </div>
-
+ 
       <Toaster />
       {statusData.map((lot, index) => {
         const lotUpdateTime = new Date(lot.last_update.replace(/ /g, "T"));
         const status = getStatus(lot.last_update);
-
+ 
         return (
-          <div key={index} className="border-b p-2 flex flex-col md:w-full font-semibold w-screen">
+          <div key={index} className="border-b p-2 flex w-full font-semibold ">
             <div className="flex gap-4 w-fit">
               {status === "recent" ? (
                 <span
@@ -119,7 +119,7 @@ const MainStatus = () => {
                 </p>
               </p>
             </div>
-
+ 
             <div
               className="mt-2 ml-auto text-sm text-gray-500 flex gap-1 w-fit"
               title=""
@@ -133,5 +133,5 @@ const MainStatus = () => {
     </div>
   );
 };
-
+ 
 export default MainStatus;

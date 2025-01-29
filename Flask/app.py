@@ -83,12 +83,6 @@ def api_login():
         logged_in = False
         return jsonify({"success": False})
     
-# uloskirjautuminen 
-@app.route('/logout', methods=['GET'])
-def logout():
-    global logged_in
-    logged_in = False
-    return jsonify({"message": "You have logged out successfully."})
 
 @app.route('/api/data')
 def get_data():
@@ -103,10 +97,11 @@ def get_data():
     else:
         print("[ERROR] Data file 'parking_log.json' not found")
         return jsonify({"error": "Data file not found"}), 404
-    @app.route('/')
+
+@app.route('/')
 def dashboard():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access"}), 401
 
     return render_template_string("""
 <!DOCTYPE html>
