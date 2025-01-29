@@ -27,6 +27,7 @@ const ParkSelect = () => {
   const fetchData = () => {
     fetch("http://127.0.0.1:5000/api/data")
       .then((response) => {
+        console.log(response); // Tarkista, että palvelin vastaa oikein
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
