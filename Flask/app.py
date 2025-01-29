@@ -13,10 +13,8 @@ load_dotenv()
 USERNAME = os.getenv("User")
 PASSWORD = os.getenv("Pass")
 
-# Simple in-memory session (can be replaced with a more secure method)
+# Kirjautumis sivu
 logged_in = False
-
-# Serve HTML login form
 @app.route('/login', methods=['GET'])
 def login():
     return render_template_string("""
@@ -63,7 +61,7 @@ def login():
         <br>
         <label for="password">Password:</label>
         <input type="password" id="password" required>
-        <br>
+        </br></br>
         <button onclick="submitLogin()">Login</button>
     </div>
 </body>
@@ -84,8 +82,28 @@ def api_login():
     else:
         logged_in = False
         return jsonify({"success": False})
+    
+# uloskirjautuminen 
+@app.route('/logout', methods=['GET'])
+def logout():
+    global logged_in
+    logged_in = False
+    return jsonify({"message": "You have logged out successfully."})
 
-@app.route('/')
+@app.route('/api/data')
+def get_data():
+    if not logged_in:
+        return jsonify({"error": "Unauthorized access."}), 401
+    
+    json_file = os.path.join(os.path.dirname(__file__), "./../parking_log.json")
+    if os.path.exists(json_file):
+        with open(json_file, "r") as file:
+            data = json.load(file)
+        return jsonify(data)
+    else:
+        print("[ERROR] Data file 'parking_log.json' not found")
+        return jsonify({"error": "Data file not found"}), 404
+    @app.route('/')
 def dashboard():
     if not logged_in:
         return jsonify({"error": "Unauthorized access. Please login first."}), 401
@@ -133,7 +151,7 @@ def dashboard():
 @app.route('/api/stats')
 def get_stats():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access."}), 401
     
     stats_filename = os.path.join(os.path.dirname(__file__), "./../stats.json")
     if os.path.exists(stats_filename):
@@ -147,7 +165,7 @@ def get_stats():
 @app.route('/api/notifications')
 def get_notifications():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access."}), 401
     
     notifications_file = os.path.join(os.path.dirname(__file__), "./../Notification.json")
     if os.path.exists(notifications_file):
@@ -182,24 +200,10 @@ def get_last_update():
     
     return jsonify(status_data)
 
-@app.route('/api/data')
-def get_data():
-    if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
-    
-    json_file = os.path.join(os.path.dirname(__file__), "./../parking_log.json")
-    if os.path.exists(json_file):
-        with open(json_file, "r") as file:
-            data = json.load(file)
-        return jsonify(data)
-    else:
-        print("[ERROR] Data file 'parking_log.json' not found")
-        return jsonify({"error": "Data file not found"}), 404
-
 @app.route('/api/photo')
 def get_output_photo():
     if not logged_in:
-        return jsonify({"error": "Unauthorized access. Please login first."}), 401
+        return jsonify({"error": "Unauthorized access."}), 401
     
     photo_path = os.path.join(os.path.dirname(__file__), "./../photo.jpg")
     if os.path.exists(photo_path):
