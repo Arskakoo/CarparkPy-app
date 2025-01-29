@@ -98,7 +98,7 @@ const SideBar = ({ activeIndex, setActiveIndex }) => {
             >
               <div className="w-full pr-24 pl-2 py-1.5 rounded-md md:flex gap-3 hidden">
                 <span className="material-symbols-rounded bg-white/0">
-                  filter_drama
+                  hard_drive
                 </span>
                 <span className="my-auto text-sm bg-white/0 font-bold tracking-wide" onClick={toggleMenu}>
                   Tila

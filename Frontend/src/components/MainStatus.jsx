@@ -33,7 +33,7 @@ const MainStatus = () => {
     const lastUpdateTime = new Date(lastUpdate.replace(/ /g, "T"));
     const timeDifference = Date.now() - lastUpdateTime.getTime();
 
-    return timeDifference < 900000 ? "recent" : "over15";
+    return timeDifference < 100000 ? "recent" : "over15"; 
   };
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const MainStatus = () => {
         const status = getStatus(lot.last_update);
 
         return (
-          <div key={index} className="border-b p-2 flex w-full font-semibold ">
+          <div key={index} className="border-b p-2 flex flex-col md:w-full font-semibold w-screen">
             <div className="flex gap-4 w-fit">
               {status === "recent" ? (
                 <span

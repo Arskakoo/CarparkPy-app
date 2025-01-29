@@ -29,7 +29,7 @@ const ParkSelect = () => {
       .then((response) => {
         console.log(response); // Tarkista, että palvelin vastaa oikein
         if (!response.ok) {
-          throw new Error("Failed to fetch data");
+          throw new Error("Virhe palvelimella");
         }
         return response.json();
       })

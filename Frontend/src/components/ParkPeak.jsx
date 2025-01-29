@@ -27,7 +27,7 @@ const ParkSelect = () => {
     fetch("http://127.0.0.1:5000/api/data")
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Virhe palvelimella");
         }
         return response.json();
       })
@@ -68,7 +68,7 @@ const ParkSelect = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to fetch the image");
+        throw new Error("Virhe palvelimella");
       }
 
       const imageBlob = await response.blob();
