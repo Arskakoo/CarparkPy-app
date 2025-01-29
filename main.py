@@ -88,7 +88,7 @@ def save_parking_spots_to_json(coords):
             {
                 "id": 1,
                 "name": "Example Park",
-                "location": "Example 10, Examplecity",
+                "location": "Example 10",
                 "detection_coords": []
             }
         ]
@@ -275,6 +275,7 @@ def menu():
     choice = input("Choose an option (1 or 2): ")
 
     if choice == '1':
+        take_photo()
         coords = select_parking_spots("photo.jpg")
         if coords:
             save_parking_spots_to_json(coords)
